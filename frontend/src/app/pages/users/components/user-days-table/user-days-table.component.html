@@ -1,0 +1,46 @@
+<!--<ng-container *ngIf="userDetails | async as userDetails; else loading">-->
+<!-- TODO Implemento tabelen e diteve, te dhenat i ke te days dhe mund tja kalosh direkt -->
+
+<p-table [value]="days.data" id="excel-table">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Id</th>
+      <th>Date</th>
+      <th>Job Start</th>
+      <th>Break Start</th>
+      <th>Break Finish</th>
+      <th>Job Finish</th>
+      <th>Working Hours</th>
+      <th>Conversion</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{ product.id }}</td>
+      <td>{{ product.day | date: 'longDate' }}</td>
+      <td>{{ product.job_start | date: 'mediumTime' }}</td>
+      <td>{{ product.break_start | date: 'mediumTime' }}</td>
+      <td>{{ product.break_finish | date: 'mediumTime' }}</td>
+      <td>{{ product.job_finish | date: 'mediumTime' }}</td>
+      <td>{{ product.hours | toHours }} hours</td>
+      <td>{{ product.hours | conversionPipe }} hours</td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-paginator
+  *ngIf="paginator"
+  (onPageChange)="paginatorChanged.emit($event)"
+  [first]="(paginator.page - 1) * paginator.count"
+  [rows]="paginator.count"
+  [totalRecords]="paginator.total"
+  [rowsPerPageOptions]="[10, 20, 30]"
+>
+</p-paginator>
+<!-- {{paginator | json}} -->
+<!-- <pre>{{ days | json }}</pre> -->
+<!--</ng-container> -->
+<br /><br /><br />
+<br />
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

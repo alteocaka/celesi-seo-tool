@@ -1,0 +1,26 @@
+.navbar {
+  font-size: 14px;
+  --surface-a: #ffffff;
+  --surface-b: #f8f9fa;
+  --surface-c: #e9ecef;
+  --surface-d: #dee2e6;
+  --surface-e: #ffffff;
+  --surface-f: #ffffff;
+  --text-color: #495057;
+  --text-color-secondary: #6c757d;
+  --primary-color: #2196F3;
+  --primary-color-text: #ffffff;
+  --font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  background: #ffffff;
+  height: 4rem;
+  padding: 0 2rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #495057;
+}

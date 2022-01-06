@@ -1,0 +1,36 @@
+<ng-container *ngIf="user$ | async as user; else loading">
+  <div class="p-d-flex p-align-center">
+    <p-button class="p-ml-2" label="Kthehu" icon="pi pi-arrow-left" routerLink="/users" iconPos="left"></p-button>
+  <h1 class="p-text-light p-p-4">Admin's Panel</h1>
+  </div>
+  <div class="p-pl-4 p-pb-1">
+    <h3 class="p-text-normal">
+    <span [ngStyle]="{ color: 'var(--primary-color)' }"
+    ><i class="pi pi-user"></i> USER: &nbsp;
+    </span>
+      {{ user.username }}
+    </h3>
+    <h3 class="p-text-normal">
+      <span [ngStyle]="{ color: 'var(--primary-color)' }"><i class="pi pi-cog"></i> ROLE: &nbsp; </span>
+      {{ user.role }}
+    </h3>
+    <!-- <p>Count: {{userDetails.days.count}}</p>
+      <p>Page: {{userDetails.days.page}}</p>
+      <p>Count: {{userDetails.days.count}}</p>
+      <p>Total: {{userDetails.days.total}}</p>
+      <p>Limit: {{userDetails.days.pageCount}}</p> -->
+  </div>
+</ng-container>
+<p-calendar inputId="basic" [(ngModel)]="filter" (ngModelChange)="handleFilterChange($event)"></p-calendar>
+<ng-container *ngIf="days$ | async as days; else loading">
+  <app-user-days-table
+    [days]="days"
+    [paginator]="paginator"
+    (rowClicked)="handleRowClicked($event)"
+    (paginatorChanged)="handlePaginatorChange($event)"
+  >
+  </app-user-days-table>
+</ng-container>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

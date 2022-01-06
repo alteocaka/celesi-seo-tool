@@ -1,0 +1,21 @@
+.wrapper{
+    width: 400px;
+    height: 50%;
+    top: 25%;
+    margin: 0 auto;
+    padding-top: 5%;
+    position: relative;
+    background:whitesmoke;
+    border-radius: 10px;
+}
+
+#logo{
+    width: 150px;
+    margin: auto;
+}
+
+#check-button{
+    width: 110px;
+    height: 110px;
+    margin-left: 20px;
+}

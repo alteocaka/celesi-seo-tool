@@ -1,0 +1,25 @@
+
+  <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+  <div class="p-d-flex p-align-center">
+    <p-button class="p-ml-2" label="Kthehu" icon="pi pi-arrow-left" routerLink="/" iconPos="left"></p-button>
+    <h1 class="p-text-light p-p-4">Admin's Panel</h1>
+    <button style="margin-left: 50%;" pButton pRipple type="button" label="Shto përdorues" icon="pi pi-plus" routerLink="/users/create" class="p-button-rounded p-button-secondary"></button>
+    <button pButton pRipple type="button" label="Fshi ditët" icon="pi pi-trash" (click)="deleteAllDays()" class="p-ml-3 p-button-rounded p-button-danger"></button>
+  </div>
+  <ng-container *ngIf="filterChanged$ | async"></ng-container>
+  <input class="p-m-2" [(ngModel)]="filter" placeholder="Kërko përdoruesin" pInputText (keydown)="filterChanged.next($event)">
+  <ng-container *ngIf="data$ | async as data; else loading">
+  <app-users-table
+    [data]="data.data"
+    [paginator]="paginator"
+    (rowClicked)="handleRowClicked($event)"
+    (deleteClicked)="handleDeleteClicked($event)"
+    (deleteDaysClicked)="handleDeleteDaysClicked($event)"
+    (excelClicked)="handleExcelClicked($event)"
+    (paginatorChanged)="handlePaginatorChange($event)"
+  >
+  </app-users-table>
+</ng-container>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

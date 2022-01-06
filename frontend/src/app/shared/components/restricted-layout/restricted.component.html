@@ -1,0 +1,6 @@
+<p-dialog header="Kujdes!" [(visible)]="displayBasic" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <h3 class="p-text-normal" style="text-align: center;">Ju nuk keni leje për të aksesuar këtë burim! <br> Kthehu prapa, ose logohu si administrator për të aksesuar.</h3>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-home" (click)="displayBasic=false" label="Kthehu" styleClass="p-button-raised p-button-danger" routerLink="/"></p-button>
+    </ng-template>
+</p-dialog>
