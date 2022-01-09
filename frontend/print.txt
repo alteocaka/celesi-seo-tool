@@ -1,0 +1,53 @@
+<<<<<<< HEAD
+ Volume in drive C has no label.
+ Volume Serial Number is CAEF-0E5B
+
+ Directory of C:\Users\DELL\Desktop\celesi-auth-frontend-master
+
+09/24/2021  12:57 AM    <DIR>          .
+09/24/2021  12:57 AM    <DIR>          ..
+08/02/2021  03:51 PM               703 .browserslistrc
+08/02/2021  03:51 PM               274 .editorconfig
+08/02/2021  03:51 PM               604 .gitignore
+09/05/2021  02:17 AM    <DIR>          .idea
+09/07/2021  11:01 PM             3,263 angular.json
+09/19/2021  11:04 PM    <DIR>          dist
+08/02/2021  03:51 PM             1,437 karma.conf.js
+08/30/2021  12:38 AM    <DIR>          node_modules
+08/28/2021  01:17 PM           484,784 package-lock.json
+08/28/2021  01:17 PM             1,280 package.json
+09/24/2021  12:57 AM                 0 print.txt
+08/02/2021  03:51 PM             1,064 README.md
+09/11/2021  01:00 PM    <DIR>          src
+08/02/2021  03:51 PM               287 tsconfig.app.json
+08/02/2021  03:51 PM               783 tsconfig.json
+08/02/2021  03:51 PM               333 tsconfig.spec.json
+              12 File(s)        494,812 bytes
+               6 Dir(s)  22,570,610,688 bytes free
+=======
+ Volume in drive C has no label.
+ Volume Serial Number is CAEF-0E5B
+
+ Directory of C:\Users\DELL\Desktop\celesi-auth-frontend-master
+
+09/24/2021  12:57 AM    <DIR>          .
+09/24/2021  12:57 AM    <DIR>          ..
+08/02/2021  03:51 PM               703 .browserslistrc
+08/02/2021  03:51 PM               274 .editorconfig
+08/02/2021  03:51 PM               604 .gitignore
+09/05/2021  02:17 AM    <DIR>          .idea
+09/07/2021  11:01 PM             3,263 angular.json
+09/19/2021  11:04 PM    <DIR>          dist
+08/02/2021  03:51 PM             1,437 karma.conf.js
+08/30/2021  12:38 AM    <DIR>          node_modules
+08/28/2021  01:17 PM           484,784 package-lock.json
+08/28/2021  01:17 PM             1,280 package.json
+09/24/2021  12:57 AM                 0 print.txt
+08/02/2021  03:51 PM             1,064 README.md
+09/11/2021  01:00 PM    <DIR>          src
+08/02/2021  03:51 PM               287 tsconfig.app.json
+08/02/2021  03:51 PM               783 tsconfig.json
+08/02/2021  03:51 PM               333 tsconfig.spec.json
+              12 File(s)        494,812 bytes
+               6 Dir(s)  22,570,610,688 bytes free
+>>>>>>> d44296a87e867c54475e5896cfc0ae88850f4bce

@@ -1,0 +1,82 @@
+<p-table class="p-mt-4" [value]="data">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Id-ja</th>
+      <th>Përdoruesi</th>
+      <th>Roli</th>
+      <th>Ditët</th>
+      <th>Opsionet</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-dat>
+    <tr>
+      <td>{{ dat.id }}</td>
+      <td>{{ dat.username }}</td>
+      <td>
+        <p-badge value="{{ dat.role }}"></p-badge>
+      </td>
+      <td (click)="userDetails(dat.id)">
+        <button
+          pButton
+          pRipple
+          type="button"
+          label="Shiko Ditët"
+          class="p-button-rounded p-button-help"
+          icon="pi pi-chart-bar"
+        ></button>
+      </td>
+      <td>
+        <button
+          routerLink="edit/{{ dat.id }}"
+          pButton
+          pRipple
+          type="button"
+          icon="pi pi-user-edit"
+          class="p-button-rounded p-button-help p-button-text"
+        ></button>
+        <button
+          pButton
+          pRipple
+          (click)="deleteClicked.emit(dat.id)"
+          type="button"
+          icon="pi pi-trash"
+          class="p-button-rounded p-button-danger p-button-text"
+        ></button>
+        <button
+          pButton
+          pRipple
+          (click)="excelClicked.emit(dat.id)"
+          type="button"
+          icon="pi pi-file-excel"
+          class="p-button-rounded p-button-success p-button-text"
+        ></button>
+        <button
+          pButton
+          pRipple
+          (click)="deleteDaysClicked.emit(dat.id)"
+          type="button"
+          icon="pi pi-times"
+          class="p-button-rounded p-button-danger p-button-text"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td>No data found</td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-paginator
+  style="padding-bottom: 150px !important; margin-bottom: 150px !important"
+  *ngIf="paginator"
+  (onPageChange)="paginatorChanged.emit($event)"
+  [first]="(paginator.page - 1) * paginator.count"
+  [rows]="paginator.count"
+  [totalRecords]="paginator.total"
+  [rowsPerPageOptions]="[10, 20, 30]"
+>
+</p-paginator>
+<br /><br /><br />
+<br />
+<!-- {{data.length}} -->

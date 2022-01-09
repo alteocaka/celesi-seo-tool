@@ -1,0 +1,26 @@
+ Volume in drive C has no label.
+ Volume Serial Number is CAEF-0E5B
+
+ Directory of C:\Users\DELL\Desktop\celesi-auth-backend-v2-main
+
+09/24/2021  12:59 AM    <DIR>          .
+09/24/2021  12:59 AM    <DIR>          ..
+07/29/2021  07:51 AM               631 .eslintrc.js
+07/29/2021  07:51 AM               375 .gitignore
+07/29/2021  07:51 AM                74 .prettierrc
+07/29/2021  07:51 AM    <DIR>          configs
+09/07/2021  07:23 PM    <DIR>          dist
+07/29/2021  07:51 AM                64 nest-cli.json
+08/28/2021  01:18 PM    <DIR>          node_modules
+08/28/2021  01:18 PM           366,035 package-lock.json
+08/28/2021  12:17 AM             2,651 package.json
+09/24/2021  12:59 AM                 0 print.txt
+09/11/2021  03:05 PM                22 Procfile
+07/29/2021  07:51 AM             3,339 README.md
+09/07/2021  06:58 PM    <DIR>          src
+07/29/2021  07:51 AM    <DIR>          test
+08/06/2021  11:41 PM               402 test.js
+07/29/2021  07:51 AM                97 tsconfig.build.json
+07/29/2021  07:51 AM               339 tsconfig.json
+              12 File(s)        374,029 bytes
+               7 Dir(s)  22,568,333,312 bytes free

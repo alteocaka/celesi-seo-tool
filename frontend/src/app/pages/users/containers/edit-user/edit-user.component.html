@@ -1,0 +1,22 @@
+<ng-container *ngIf="$userData | async as userData; else loading">
+  <div class="p-d-flex p-align-center">
+    <p-button
+      class="p-ml-2"
+      label="Kthehu"
+      icon="pi pi-arrow-left"
+      routerLink="/users"
+      iconPos="left"
+    ></p-button>
+    <h1 class="p-text-light p-p-4">Edito përdoruesin</h1>
+  </div>
+  <!-- <p>{{userData.username}}</p>
+<p>{{userData.role}}</p> -->
+  <app-users-form
+    (submitted)="handleSubmitForm($event, userData.id)"
+    [userDetails]="userData"
+  >
+  </app-users-form>
+</ng-container>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

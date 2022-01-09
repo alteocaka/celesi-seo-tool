@@ -1,0 +1,71 @@
+<p-table #dt1 [value]="days.data" id="excel-table" [globalFilterFields]="['date']">
+<!--  <ng-template pTemplate="caption">-->
+<!--    <div class="p-d-flex">-->
+<!--      <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>-->
+<!--      <span class="p-input-icon-left p-ml-auto">-->
+<!--                    <i class="pi pi-search"></i>-->
+<!--                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />-->
+<!--                </span>-->
+<!--    </div>-->
+<!--  </ng-template>-->
+  <ng-template pTemplate="header">
+    <tr>
+      <th field="id">Id</th>
+      <th field="date">Date</th>
+      <th field="job_start">Job Start</th>
+      <th field="break_start">Break Start</th>
+      <th field="break_finish">Break Finish</th>
+      <th field="job_finish">Job Finish</th>
+      <th field="working_hours">Working Hours</th>
+      <th field="working_hours">Conversion</th>
+      <th field="working_hours">Comment</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{ product.id }}</td>
+      <td>{{ product.day | date: 'longDate' }}</td>
+      <td>{{ product.job_start | date: 'mediumTime' }}</td>
+      <td>{{ product.break_start | date: 'mediumTime' }}</td>
+      <td>{{ product.break_finish | date: 'mediumTime' }}</td>
+      <td>{{ product.job_finish | date: 'mediumTime' }}</td>
+      <td>{{ product.hours | toHours }} hours</td>
+      <td>{{ product.hours | conversionPipe }} hours</td>
+      <td pEditableColumn>
+        <p-cellEditor>
+            <ng-template pTemplate="input">
+                <input #comment pInputText type="text" [(ngModel)]="product.comment">
+                <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-save"
+                (click) = "updateComment(product.id, comment.value)"
+                class="p-button-rounded p-button-success p-button-text"
+              ></button>
+            </ng-template>
+            <ng-template pTemplate="output">
+                {{ product.comment }}
+            </ng-template>
+        </p-cellEditor>
+    </td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-paginator
+  *ngIf="paginator"
+  (onPageChange)="paginatorChanged.emit($event)"
+  [first]="(paginator.page - 1) * paginator.count"
+  [rows]="paginator.count"
+  [totalRecords]="paginator.total"
+  [rowsPerPageOptions]="[10, 20, 30]"
+>
+</p-paginator>
+<!-- {{paginator | json}} -->
+<!-- <pre>{{ days | json }}</pre> -->
+<!--</ng-container> -->
+<br /><br /><br />
+<br />
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
